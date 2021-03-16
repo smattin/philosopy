@@ -55,9 +55,9 @@ and how various real systems (examples from audience) might stack up against the
 
               Right Thing                |                Worse is Better
 Simplicity - interface > implementation  | interface < implementation,
-Correctness  always                      | in observable aspects (interface or effects)
-Consistency  > Simplicity, = Correctness | < implementation Simplicity (sometimes)
-Completeness < Simplicity                | only expected cases, Completeness least important, < implementation Simplicity
+Correctness  always                      | interface or effects
+Consistency  > Simplicity, > Complete, = Correctness | < implementation Simplicity (sometimes)
+Completeness < Simplicity                | least important, < implementation Simplicity
 
  I recommend reading some of the original sources, easily found on the Web, easily found by searching for "Worse is Better" (links at end).
  There is a significant body of subsequent discussion on e-mail lists, web sites, blogs and academic articles for about 15 years, from 1990-2005
