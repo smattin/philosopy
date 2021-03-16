@@ -1,0 +1,71 @@
+The title of this talk is not really Software Philosophy.  I just didn't want to give away the real title too early and will get back to it shortly.
+
+I would like to present some design characteristics, which might be applicable in many fields, but in particular as they apply to Software.
+I don't assume any particular background in Software design, development, or associated activities.
+
+None of the ideas I present are original.
+(like most good ideas)
+
+They were originally given in a paper delivered at a conference in England by R. Gabriel of Lucid, around 1990 and
+were widely distributed and commented upon for a period of at least 15 years.
+Lucid was a supplier of compilers, libraries and consulting for a variant of the Lisp programming language and infrastructure, CLOS (Common Lisp Object System).
+The gist of the original article is that Lisp failed to take over the programming world because it was too perfect,
+although Gabriel argues that it's design philosophy is "The Right Thing".
+
+Recursion Joke: There are two kinds of people: those who divide everything into two parts and those who don't
+
+"Lisp: Good News, Bad News, How to Win Big"
+By Richard Gabriel, Lucid, 1989
+===========
+I and just about every designer of Common Lisp and CLOS has had extreme exposure to the MIT/Stanford style of design.
+The essence of this style can be captured by the phrase ``the right thing.'' To such a designer it is important to get all of the following characteristics right:
+
+    Simplicity-the design must be simple, both in implementation and interface. It is more important for the interface to be simple than the implementation.
+
+    Correctness-the design must be correct in all observable aspects. Incorrectness is simply not allowed.
+
+    Consistency-the design must not be inconsistent. A design is allowed to be slightly less simple and less complete to avoid inconsistency. Consistency is as important as correctness.
+
+    Completeness-the design must cover as many important situations as is practical. All reasonably expected cases must be covered. Simplicity is not allowed to overly reduce completeness.
+
+I believe most people would agree that these are good characteristics. I will call the use of this philosophy of design the ``MIT approach.'' Common Lisp (with CLOS) and Scheme represent the MIT approach to design and implementation.
+
+The worse-is-better philosophy ==== the real title of this talk, and the name by which these ideas are most easily found ==== is only slightly different:
+
+    Simplicity-the design must be simple, both in implementation and interface. It is more important for the implementation to be simple than the interface. Simplicity is the most important consideration in a design.
+
+    Correctness-the design must be correct in all observable aspects. It is slightly better to be simple than correct.
+
+    Consistency-the design must not be overly inconsistent. Consistency can be sacrificed for simplicity in some cases, but it is better to drop those parts of the design that deal with less common circumstances than to introduce either implementational complexity or inconsistency.
+
+    Completeness-the design must cover as many important situations as is practical. All reasonably expected cases should be covered. Completeness can be sacrificed in favor of any other quality. In fact, completeness must sacrificed whenever implementation simplicity is jeopardized. Consistency can be sacrificed to achieve completeness if simplicity is retained; especially worthless is consistency of interface.
+
+Early Unix and C are examples of the use of this school of design, and I will call the use of this design strategy the ``New Jersey approach.'' I have intentionally caricatured the worse-is-better philosophy to convince you that it is obviously a bad philosophy and that the New Jersey approach is a bad approach.
+
+However, I believe that worse-is-better, even in its strawman form, has better survival characteristics than the-right-thing, and that the New Jersey approach when used for software is a better approach than the MIT approach.
+=======
+"Unix and C are the ultimate computer viruses. " - R Gabriel
+=======
+ "The lesson to be learned from this is that it is often undesirable to go for the right thing first. It is better to get half of the right thing available so that it spreads like a virus. Once people are hooked on it, take the time to improve it to 90% of the right thing. ""
+======
+https://www.jwz.org/doc/worse-is-better.html
+
+* Detailed discussion of the differences between the two philosophies, with emphasis on the relative priorities
+and how various real systems (examples from audience) might stack up against the design criteria.
+
+              Right Thing                |                Worse is Better
+Simplicity - interface > implementation  | interface < implementation,
+Correctness  always                      | in observable aspects (interface or effects)
+Consistency  > Simplicity, = Correctness | < implementation Simplicity (sometimes)
+Completeness < Simplicity                | only expected cases, Completeness least important, < implementation Simplicity
+
+ I recommend reading some of the original sources, easily found on the Web, easily found by searching for "Worse is Better" (links at end).
+ There is a significant body of subsequent discussion on e-mail lists, web sites, blogs and academic articles for about 15 years, from 1990-2005
+and in particular:
+
+* a version of the original argument: Worse is Better, Richard P. Gabriel
+* the history of the ideas and discussion:  Rise of "Worse is Better", Richard P. Gabriel
+* an argument that Worse might actually be Better: Is Worse Really Better, Richard P. Gabriel
+* Worse Is Better Is Worse, written by Gabriel under the pseudonym "Nickieben Bourbaki", where he argues (again) the The Right Thing is Better.
+
+Links from https://en.wikipedia.org/wiki/Worse_is_better
